@@ -1,14 +1,19 @@
 class Temperature
+  KELVIN_FACTOR = 273.15
+
   def initialize(*args)
-    @temperature = args[0]
-    @unit = args[1]
+    @temperature = args.first
+    # @unit = args[1]
   end
 
   def to_celsius
-    @temperature - 273.15
+    temperature - KELVIN_FACTOR
   end
 
   def to_kelvin
-    @temperature + 273.15
+    temperature + KELVIN_FACTOR
   end
+
+  private
+  attr_reader :temperature
 end
